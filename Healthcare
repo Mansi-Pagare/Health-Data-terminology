@@ -1,36 +1,57 @@
-Encounter — Day 1: Professional Definition
+Professional Definition
 Definition
 
-An encounter is an interaction between a patient and a healthcare organization, provider, or healthcare service during which healthcare services are provided or managed. In clinical information systems, an encounter commonly represents a specific episode of contact, such as an outpatient visit, emergency department visit, or inpatient stay. An encounter can contain or link to clinical information such as diagnoses, procedures, observations, medications, orders, and providers. The exact definition and structure of an encounter can vary across EHR systems, data models, and interoperability standards.
+An encounter is an interaction between a patient and a healthcare provider or healthcare organization for the purpose of providing or managing healthcare services.
+
+An encounter can represent different types of healthcare interactions, such as an outpatient visit, emergency department visit, inpatient stay, or other clinical interaction, depending on how the healthcare system defines and records it.
+
+In an EHR, an encounter generally provides context for clinical information such as diagnoses, procedures, observations, medications, orders, and notes.
+
+An encounter is not necessarily the same thing as a claim. One encounter may generate one or more claims, and some encounters may not result in a claim.
 
 Category
 
-Clinical data / EHR / Healthcare analytics
+Healthcare / Clinical Data / EHR
 
 Why it matters
 
-Encounter data is often a foundational part of healthcare analytics.
+For a health data analyst, the encounter is often an important way to organize and analyze clinical activity.
 
-Analysts may use encounters to:
+For example, encounter data can be used to calculate:
 
-Count outpatient, inpatient, and emergency visits
-Analyze healthcare utilization
-Connect clinical events to a specific patient visit
-Calculate metrics such as ED utilization or visit volume
-Link diagnoses, procedures, providers, and services
-Build patient cohorts
-Analyze care patterns over time
+Number of outpatient visits
+Emergency department utilization
+Inpatient admissions
+Length of stay
+Provider utilization
+Diagnosis and procedure patterns
+Readmission metrics
+Patient visit frequency
 
-For example, an analyst might ask:
+An analyst needs to understand what the organization's definition of an encounter is before using it in a metric.
 
-"How many emergency department encounters occurred each month?"
+Simple example
 
-or:
+A patient visits a primary care clinic for a follow-up appointment.
 
-"How many patients had at least three outpatient encounters during the year?"
+The EHR may create an encounter with information such as:
 
-Review note
+Encounter ID: ENC10025
+Patient ID: P1001
+Encounter Type: Outpatient
+Date: 2026-08-10
+Provider ID: PR204
+Location: Primary Care
+Status: Completed
 
-The meaning and structure of an encounter can differ by EHR, organization, data model, or interoperability standard. Do not assume that every system represents a "visit" as exactly one encounter.
+The diagnoses, vital signs, laboratory orders, medications, and clinical notes associated with that visit can be connected to the encounter.
 
-Review note: Verify this detail against the relevant authoritative source when working with a specific EHR, data model, or interoperability implementation.
+Important distinction
+
+An encounter describes a healthcare interaction.
+
+A claim describes a request for payment/reimbursement.
+
+They can be related, but they are not the same concept.
+
+Review note: Encounter definitions and encounter types can vary by EHR, organization, implementation, and healthcare workflow. Verify the specific definition used by the source system before building a metric.
